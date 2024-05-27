@@ -7,21 +7,28 @@ body {
 }
 
 .navbar {
-    background-color: #f7e0e0 !important; /* Blanc */
+    background-color: #f7e0e0 !important; /* Couleur de fond */
 }
 
 .navbar-brand img {
     border-radius: 10%;
+    max-width: 60px; /* Ajuster la taille maximale du logo */
+    height: auto;
+    margin-left: 10px; /* Ajouter un espacement gauche */
 }
 
 .navbar-brand {
     color: #007bff !important; /* Bleu médical */
     font-weight: bold;
+    font-size: 23px; /* Ajuster la taille de la police */
+    padding: 10px; /* Ajouter un padding pour un meilleur espacement */
 }
 
 .navbar-nav .nav-link {
     color: #007bff !important; /* Bleu médical */
     margin-right: 30px; /* Ajouter une marge droite */
+    font-size: 18px; /* Ajuster la taille de la police */
+    padding: 10px; /* Ajouter un padding pour un meilleur espacement */
 }
 
 .navbar-nav .nav-link:hover {
@@ -37,13 +44,14 @@ body {
 }
 
 .btn-appointment {
-    background-color: #28a745; /* Vert pour l'appel à l'action */
+    background-color: #f7e0e0; /* Couleur pour l'appel à l'action */
     color: #ffffff;
     font-size: 22px;
     border-radius: 20px;
     padding: 10px 20px;
     font-weight: bold;
     text-decoration: none;
+    
 }
 
 .btn-appointment:hover {
