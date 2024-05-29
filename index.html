@@ -15,7 +15,6 @@
 </head>
 <body>
   <br>
-  <br>
   
 <nav class="navbar navbar-expand-lg">
   <a class="navbar-brand" href="#">
@@ -43,7 +42,7 @@
     <li class="nav-item">
       <a  href="./login.html">
    <svg  style="margin-top: 10px;" 
-   xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+   xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
         <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
         <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
       </svg></a>
@@ -62,7 +61,18 @@
   </div>
 </nav>
 
-<img class="im1" src="images/image1.png" alt="Health Image">
+
+<img style="width:100%; height: 200;" src="./images/paint.gif" alt="Votre GIF animé" id="gif">
+    <script>
+        var gif = document.getElementById('gif');
+
+        // Fonction pour relire le GIF automatiquement
+        function replayGif() {
+            gif.src = gif.src;
+        }
+
+        gif.addEventListener('ended', replayGif);
+    </script>
 
 <div class="container">
     <div class="header">
@@ -98,14 +108,39 @@
                 <p><strong>Said, 41 ans</strong></p>
             </div>
             <div class="story">
-                <img src="path-to-image-3.jpg" alt="Témoignage de quelqu'un">
-                <blockquote>“Témoignage de quelqu'un.”</blockquote>
-                <h2>Histoire</h2>
-                <p>Un autre témoignage de don de sang.</p>
-                <p><strong>Nom, âge</strong></p>
+                <img src="./images/patiente4.jpg" alt="Témoignage de quelqu'un">
+                
+                <h2>Maladie du Biermer</h2>
+                <p>Quand j'ai reçu le diagnostic de la maladie de Biermer, ma vie a pris un tournant inattendu... J'ai été hospitalisée après un malaise et j'ai nécessité deux transfusions sanguines car mon organisme était incapable de régénérer et produire suffisamment d'anticorps. C'est à ce moment que j'ai réalisé que ma vie prenait un nouveau départ.
+
+                  J'apprécie énormément la possibilité de partager mon parcours sur mes réseaux sociaux, car sans ce geste généreux, je ne serais plus là aujourd'hui. Je suis convaincue qu'une action aussi simple que celle-ci peut transformer radicalement la vie d'une personne pour toujours.</p>
+                <p><strong>Amina,45 ans</strong></p>
             </div>
           
+
+
+            <div class="story">
+              <img src="./images/patiente5.jpg" alt="Témoignage de quelqu'un">
+              
+              <h2>Insuffisance Rénale</h2>
+              
+               <p>
+                Lorsque le diagnostic d'insuffisance rénale a été posé, j'ai pris conscience de ma dépendance envers autrui pour ma survie. Le don de sang est pour moi un véritable secours, car il offre le soutien nécessaire à mon corps pour affronter les épreuves difficiles.
+               </p>
+              <p><strong>lham,45 ans</strong></p>
+          </div>
+
+
         </div>
+
+
+
+
+
+
+        
+
+
         <button class="next">&#10095;</button>
     </div>
 </div>
