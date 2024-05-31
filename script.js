@@ -1,8 +1,13 @@
 let currentIndex = 0;
 
+const storiesElement = document.querySelector('.stories');
+const storyElements = document.querySelectorAll('.story');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+const storiesPerPage = 2;
+const totalStories = Math.ceil(storyElements.length / storiesPerPage);
+
 function showStory(index) {
-    const stories = document.querySelector('.stories');
-    const totalStories = Math.ceil(document.querySelectorAll('.story').length / 2); // Divided by 2 to show two at a time
     if (index >= totalStories) {
         currentIndex = 0;
     } else if (index < 0) {
@@ -10,17 +15,19 @@ function showStory(index) {
     } else {
         currentIndex = index;
     }
-    const offset = -currentIndex * 100;
-    stories.style.transform = `translateX(${offset}%)`;
+
+    const offset = -currentIndex * 100; // Calculer le décalage en pourcentage
+    storiesElement.style.transform = `translateX(${offset}%)`;
 }
 
-document.querySelector('.prev').addEventListener('click', () => {
+// Ajouter des écouteurs d'événements pour les boutons "précédent" et "suivant"
+prevButton.addEventListener('click', () => {
     showStory(currentIndex - 1);
 });
 
-document.querySelector('.next').addEventListener('click', () => {
+nextButton.addEventListener('click', () => {
     showStory(currentIndex + 1);
 });
 
-// Initialize
+// Initialiser l'affichage des histoires
 showStory(currentIndex);
