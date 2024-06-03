@@ -33,10 +33,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    function updateCarousel() {
-        var offset = -currentIndex * 100;
-        stories.style.transform = 'translateX(' + offset + '%)';
-    }
+  
 });
-
-
