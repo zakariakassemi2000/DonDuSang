@@ -1,33 +1,42 @@
-let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    var accordions = document.querySelectorAll('.accordion-button');
+    var dynamicImage = document.getElementById('dynamic-image');
 
-const storiesElement = document.querySelector('.stories');
-const storyElements = document.querySelectorAll('.story');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-const storiesPerPage = 2;
-const totalStories = Math.ceil(storyElements.length / storiesPerPage);
+    accordions.forEach(function (accordion) {
+        accordion.addEventListener('click', function () {
+            var content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+            dynamicImage.src = this.dataset.image;
+        });
+    });
 
-function showStory(index) {
-    if (index >= totalStories) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = totalStories - 1;
-    } else {
-        currentIndex = index;
+    var prev = document.querySelector('.prev');
+    var next = document.querySelector('.next');
+    var stories = document.querySelector('.stories');
+    var currentIndex = 0;
+
+    prev.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    next.addEventListener('click', function () {
+        if (currentIndex < stories.children.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    function updateCarousel() {
+        var offset = -currentIndex * 100;
+        stories.style.transform = 'translateX(' + offset + '%)';
     }
-
-    const offset = -currentIndex * 100; // Calculer le décalage en pourcentage
-    storiesElement.style.transform = `translateX(${offset}%)`;
-}
-
-// Ajouter des écouteurs d'événements pour les boutons "précédent" et "suivant"
-prevButton.addEventListener('click', () => {
-    showStory(currentIndex - 1);
 });
 
-nextButton.addEventListener('click', () => {
-    showStory(currentIndex + 1);
-});
 
-// Initialiser l'affichage des histoires
-showStory(currentIndex);
