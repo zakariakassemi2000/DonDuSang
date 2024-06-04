@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Lieux</title>
+    <link rel="stylesheet" href="CHercherLieu.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h2>Liste des lieux sélectionnés</h2>
+            <ul id="places-list">
+                <!-- Les lieux sélectionnés seront ajoutés ici -->
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="map-container">
+                <h1>Vous pouvez utiliser Google Maps pour rechercher des hôpitaux</h1>
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d44563.011938893644!2d-5.517830192597639!3d33.885384889178965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shopital!5e0!3m2!1sar!2sma!4v1716112957951!5m2!1sar!2sma" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadNavBar() {
+            fetch('NavBar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                });
+        }
+
+        window.onload = function() {
+            loadNavBar();
+
+            // Function to add a selected place to the list and add click event
+            function addPlace(name, mapUrl) {
+                const placesList = document.getElementById('places-list');
+                const listItem = document.createElement('li');
+                listItem.textContent = name;
+                listItem.setAttribute('data-map-url', mapUrl);
+                listItem.addEventListener('click', function() {
+                    document.getElementById('map').src = this.getAttribute('data-map-url');
+                });
+                placesList.appendChild(listItem);
+            }
+
+            // Adding example places
+            addPlace('Hôpital 1', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.964372922142!2d-71.10403038454378!3d42.36009107918771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e370a8ed5cbb2f%3A0xd2db964b97f7e0b8!2sHôpital%201!5e0!3m2!1sfr!2sfr!4v1595286139191!5m2!1sfr!2sfr');
+            addPlace('Hôpital 2', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.964372922142!2d-71.10403038454378!3d42.36009107918771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e370a8ed5cbb2f%3A0xd2db964b97f7e0b8!2sHôpital%202!5e0!3m2!1sfr!2sfr!4v1595286139191!5m2!1sfr!2sfr');
+            addPlace('Hopital Miliaire Molay Ismail Meknes', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44563.011938893644!2d-5.517830192597639!3d33.885384889178965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda04506e910bb4d%3A0xe87d8498713c62f4!2sHopital+Militaire+Moulay+Ismail!5e0!3m2!1sfr!2sfr!4v1716112957951!5m2!1sfr!2sfr');
+        };
+    </script>
+</body>
+</html>
