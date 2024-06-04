@@ -26,6 +26,8 @@ input,
 button {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+
+  background-color: #fce4d6;
 }
 
 a {
