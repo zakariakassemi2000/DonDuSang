@@ -1,61 +1,49 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      
-      <link rel="stylesheet" href="./CSS/RegestreCss.css">
-      <style>
-      </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./CSS/RegestreCss.css">
+    <title>Login form - Bedimcode</title>
+</head>
+<body>
+    <div class="login">
+        <img src="./images/iM12.png" alt="image" class="login__bg">
 
-      <title>Login form - Bedimcode</title>
-   </head>
-   <body>
-      <div class="login">
-         <img src="./images/iM12.png" alt="image" class="login__bg">
-
-         <form action="" class="login__form">
-            <h1 class="login__title">Registre</h1>
+        <form action="regestre.php" method="POST" class="login__form">
+            <h1 class="login__title">Register</h1>
 
             <div class="login__inputs">
-              <div class="login__box">
-                <input type="text" placeholder="Nom" required class="login__input">
-                <i class="ri-mail-fill"></i>
-             </div>
-
-             <div class="login__box">
-                <input type="text" placeholder=" Prenom" required class="login__input">
-                <i class="ri-lock-2-fill"></i>
-             </div>
-               <div class="login__box">
-                  <input type="email" placeholder="Email ID" required class="login__input">
-                  <i class="ri-mail-fill"></i>
-               </div>
-
-               <div class="login__box">
-                  <input type="password" placeholder=" Password" required class="login__input">
-                  <i class="ri-lock-2-fill"></i>
-               </div>
-               <div class="login__box">
-                <input type="password" placeholder="confirm Password" required class="login__input">
-                <i class="ri-lock-2-fill"></i>
-             </div>
+                <div class="login__box">
+                    <input type="text" name="nom" placeholder="Nom" required class="login__input">
+                </div>
+                <div class="login__box">
+                    <input type="text" name="prenom" placeholder="Prenom" required class="login__input">
+                </div>
+                <div class="login__box">
+                    <input type="email" name="email" placeholder="Email ID" required class="login__input">
+                </div>
+                <div class="login__box">
+                    <input type="password" name="password" placeholder="Password" required class="login__input">
+                </div>
+                <div class="login__box">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required class="login__input">
+                </div>
             </div>
 
             <div class="login__check">
-               <div class="login__check-box">
-                  <input type="checkbox" class="login__check-input" id="user-check">
-                  <label for="user-check" class="login__check-label">Remember me</label>
-               </div>
-
-               <a href="#" class="login__forgot">Forgot Password?</a>
+                <div class="login__check-box">
+                    <input type="checkbox" class="login__check-input" id="user-check">
+                    <label for="user-check" class="login__check-label">Remember me</label>
+                </div>
+                <a href="#" class="login__forgot">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="login__button">Sign UP</button>
+            <button type="submit" class="login__button">Sign Up</button>
 
             <div class="login__register">
-               Don't have an account? <a href="login.html">Login</a>
+                Already have an account? <a href="login.html">Login</a>
             </div>
-         </form>
-      </div>
-   </body>
+        </form>
+    </div>
+</body>
 </html>

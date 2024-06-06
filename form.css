@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fce4d6;
+    margin: 0;
+    padding: 0;
+}
+
+textarea, select {
+    font-family: 'Poppins', sans-serif; /* Assurez-vous que les polices sont cohérentes */
+    font-size: 16px; /* Réduisez légèrement la taille de la police */
+    color: #333;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px; /* Ajoutez un espacement entre les champs */
+}
+input[type="date"],
+input[type="text"] {
+    font-family: 'Poppins', sans-serif; /* Assurez-vous que les polices sont cohérentes */
+    font-size: 16px; /* Réduisez légèrement la taille de la police */
+    color: #333;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px; /* Ajoutez un espacement entre les champs */
+}
+
+
+
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 18px; /* Augmentez légèrement la taille de la police des étiquettes */
+    color: #666;
+    margin-bottom: 9px;
+}
+
+.form-options label {
+    display: block; /* Assurez-vous que les étiquettes sont affichées verticalement */
+    margin-bottom: 5px; /* Ajoutez un petit espacement entre les options */
+}
+
+.form-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 32px; /* Augmentez la taille de la police du titre */
+    color: #0046FF; /* Changez la couleur du titre */
+    text-align: center; /* Centrez le titre */
+    margin-bottom: 30px; /* Ajoutez un espacement en bas du titre */
+}
+
+button[type="submit"] {
+    padding: 12px 24px; /* Augmentez légèrement la taille du bouton */
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto 0; /* Ajoutez un espacement en haut du bouton */
+}
+
+button[type="submit"]:hover {
+    background-color: #00796b;
+}
